@@ -1,4 +1,25 @@
-body {
-    background-color: rgb(212, 176, 247);
+body{
+    background-color: rgba(230, 204, 241, 0.973);
 }
+
+.sectionheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+text-decoration: underline;
+}
+
+.secfooter{
+    display: flex;
+    justify-content: center;
+}
+
+.project{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+
+
 
