@@ -1,14 +1,85 @@
+:root {
+  --primary-color: #8a1010;
+  --text-color: #fff;
+  --hover-color: #ffcc33;
+  --background-color: #f7f7f7;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
   }
   
+  h1, h2, h3 {
+    font-family: 'ariel', sans-serif;
+    composes: header-text;
+  }
+
+
+  /* Creative Styling for Your Header */
+header {
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+
+.menu a:hover {
+  color: var(--hover-color);
+}
+
+h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-top: 20px;
+}
+.header-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 36px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Add a creative hover effect to the header */
+header:hover {
+  background-color: red;
+  transform: scale(1.05);
+  transition: background-color 0.3s, transform 0.3s;
+}
   /* Set some global styles */
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background: linear-gradient(to bottom, #f5f5f5, #bdbbbb);
   }
   
   .container {
@@ -20,6 +91,10 @@ body, h1, h2, h3, p, ul, li {
   header {
     text-align: center;
     padding: 20px 0;
+    background-image: url(.photo);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
   
   h1 {
@@ -29,7 +104,7 @@ body, h1, h2, h3, p, ul, li {
   }
   
   .menu {
-    background-color: #333;
+    background-color: var(--primary-color);
     padding: 10px 0;
   }
   
@@ -46,17 +121,24 @@ body, h1, h2, h3, p, ul, li {
   }
   
   .menu li a:hover {
-    background-color: #d10c8c;
+    /* background-color: red; */
+  /* transition: background-color 0.3s ease; */
+  transition: transform 0.3s ease
   }
   
   .photo {
     text-align: center;
     margin: 20px 0;
+    height:auto;
   }
   
   .profile-photo {
-    max-width: 100%;
-    height: auto;
+    border: 2px solid red;
+    border-radius: 8px;
+    width: 0px;
+  }
+  .profile-photo:hover {
+    transform: scale(1.1);
   }
   
   .about, .contact, .skills, .social{
@@ -65,6 +147,45 @@ body, h1, h2, h3, p, ul, li {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  /* Creative Styling for Your About Me Section */
+.about {
+  background-color: #f7f7f7;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about h2 {
+  font-size: 36px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* Add a creative hover effect to the section */
+.about:hover {
+  background-color: rgba(172, 166, 166, 0.158)0.473;
+  color: #fff;
+  transform: scale(1.05);
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+  
+  ul {
+    list-style: none;
+  }
+  
+  ul li::before {
+    content: "\2022"; /* Use a custom character or image */
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
   }
   
   h2 {
@@ -99,7 +220,68 @@ body, h1, h2, h3, p, ul, li {
     margin-bottom: 10px;
     font-weight: bold;
   }
+  /* Creative Styling for Your Skills Section */
+.skills {
+  background-color: #f3f3f3;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 36px;
+  color: red;
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.skills-list, .other-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li, .other-skills-list li {
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.skills-list li:hover, .other-skills-list li:hover {
+  background-color: orange;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Add some spacing between the skills */
+.skills-list li + li, .other-skills-list li + li {
+  margin-left: 15px;
+}
+
+/* Add a slight box shadow to the skills */
+.skills-list li, .other-skills-list li {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
+  .social a {
+    transition: color 0.3s ease;
+  }
+  
+  .social a:hover {
+    color: red;
+  }
+
   .network-links {
     text-align: center;
     margin-top: 20px;
@@ -111,17 +293,26 @@ body, h1, h2, h3, p, ul, li {
     text-decoration: none;
     margin-right: 10px;
     font-weight: bold;
+
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   
   .network-links a:hover {
     color: #555;
   }
   
+  .network-links a:in-viewport {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
   footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0;
-    background-color: #333333;
+    background: linear-gradient(to bottom, #333333, #111111);
+    font-weight: bold;
     color: #fff;
   }
   .profile-photo {
@@ -130,5 +321,93 @@ body, h1, h2, h3, p, ul, li {
     width: auto;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(23, 156, 186, 0.4);
+    transform: rotate(7deg);
+    transition: transform 0.3s ease-in-out;
+    filter: grayscale(10%);
   }
+  
+  .profile-photo:hover {
+    transform: rotate(-3deg) scale(1.05);
+    filter: grayscale(0);
+    border: 4px solid rgba(255, 165, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(255, 165, 0, 0.4);
+  }
+  /* Creative Styling for Your Contact Section */
+.contact {
+  background-color: #f7f7f7;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact h2 {
+  font-size: 36px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact li {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact li strong {
+  color: red;
+}
+
+/* Add a creative hover effect to the section */
+.contact:hover {
+  /* background-color: red; */
+  color: #fff;
+  transform: scale(1.05);
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.social {
+  background-color: #8a1010;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social h2 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.network-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.network-links a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  transition: color 0.3s;
+}
+
+.network-links a:hover {
+  color: #ffcc33;
+}
+
+/* Add a creative hover effect to the section */
+.social:hover {
+  background-color: red;
+  transform: scale(1.05);
+  transition: background-color 0.3s, transform 0.3s;
+}
